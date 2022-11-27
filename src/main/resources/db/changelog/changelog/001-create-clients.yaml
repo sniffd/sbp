@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - preConditions:
+      - onFail: MARK_RAN
+      - not:
+          - tableExists:
+              tableName: clients
+  - changeSet:
+      id: 26112022-1
+      author: deremin
+      changes:
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: lastname
+                  type: varchar(50)
+              - column:
+                  name: firstname
+                  type: varchar(50)
+              - column:
+                  name: middlename
+                  type: varchar(50)
+              - column:
+                  name: phone
+                  type: varchar(50)
+              - column:
+                  name: bank_name
+                  type: varchar(50)
