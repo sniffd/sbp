@@ -1,6 +1,6 @@
 package com.example.sbp.service
 
-import com.example.sbp.dto.MessageDto
+import com.example.dto.MessageDto
 import com.example.sbp.repository.ClientRepository
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException
 import org.springframework.kafka.core.KafkaTemplate
@@ -17,7 +17,7 @@ class TransactionService(
 
     fun addTransaction(message: MessageDto) {
         checkAccountExistence(message)?.let {
-            kafkaTemplate.send("transactions", message)
+            kafkaTemplate.send(message.toBank, message)
         } ?: throw NotFoundException()
     }
 }

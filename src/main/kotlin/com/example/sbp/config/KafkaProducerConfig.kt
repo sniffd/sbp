@@ -1,6 +1,6 @@
 package com.example.sbp.config
 
-import com.example.sbp.dto.MessageDto
+import com.example.dto.MessageDto
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.common.serialization.StringSerializer
 import org.springframework.context.annotation.Bean

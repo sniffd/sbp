@@ -1,6 +1,6 @@
 package com.example.sbp.controller
 
-import com.example.sbp.dto.MessageDto
+import com.example.dto.MessageDto
 import com.example.sbp.service.TransactionService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
